@@ -2,6 +2,16 @@ chrome.identity.getAuthToken({
     interactive: true
 }, (token) => {
     console.log(token);
+    if (!chrome.runtime.lastError) {
+        let url = 'https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=' + token;
+        fetch(url).then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            chrome.storage.sync.set({
+                userData: data
+            })
+        })
+    }
 });
 
 //Shortcuts event handler
@@ -102,15 +112,6 @@ function createGoogleMeet() {
     });
 }
 
-chrome.action.onClicked.addListener((tab) => {
-    chrome.scripting.executeScript({
-        target: {
-            tabId: tab.id
-        },
-        function: toggleDark
-    });
-});
-
 function switchUser() {
     chrome.identity.getAuthToken({
         interactive: true
@@ -125,7 +126,14 @@ function switchUser() {
                     chrome.identity.getAuthToken({
                         interactive: true
                     }, (token) => {
-                        console.log(token);
+                        let url = 'https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=' + token;
+                        fetch(url).then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                            chrome.storage.sync.set({
+                                userData: data
+                            })
+                        })
                         chrome.runtime.sendMessage({
                             msg: 'user_changed',
                         });

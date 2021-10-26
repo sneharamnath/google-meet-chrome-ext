@@ -29,7 +29,8 @@
       "profile email",
       "https://www.googleapis.com/auth/contacts",
       "https://www.googleapis.com/auth/calendar",
-      "https://www.googleapis.com/auth/calendar.readonly"
+      "https://www.googleapis.com/auth/calendar.readonly",
+      "https://www.googleapis.com/auth/userinfo.email"
     ]
   },
   "devtools_page": "devtools.html",
