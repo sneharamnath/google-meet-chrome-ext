@@ -7,9 +7,10 @@ This plugin is used to create new google meet link.
 
 ## Features
 
-1.Google Chrome extension to allow users to create a new Google Meet meeting and quickly share the meeting link with others. 
-2.Allows users to choose which email to create meetings if they have multiple Google Accounts.
-3.Optimize meeting creation by allowing users to create and share links via keyboard alone.
+1. Google Chrome extension to allow users to create a new Google Meet meeting and quickly share the meeting link with others.
+2. Allows users to choose which email to create meetings if they have multiple Google Accounts.
+3. Optimize meeting creation by allowing users to create and share links via keyboard alone.
+
 
 ## Keyboard Shortcuts
 
