@@ -13,6 +13,7 @@
 .btn-meet,
 .btn-switch-user {
   height: 30px;
+  min-width: 100px;
   text-decoration: none;
   background-color: rgb(51, 103, 214);
   border: 0;
@@ -26,29 +27,33 @@
 }
 
 .meet-link-container{
-  display: flex;
-  margin-top: 10px;
-  align-items: center;
+  display: inline-flex;
+  flex: 1 1;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 1rem;
+  background-color: rgb(241, 238, 238);
 }
 
-.clipboard-input{
-  height: 30px;
-  width: 80%;
-  background: #f1f3f4;
-  border-radius: 4px;
-  padding-left: 12px;
-  margin-right: 10px;
+.copy-icon {
+  padding: 0.25rem;
+  height: 25px;
+  width: 25px;
 }
 
-.meeting-org-name{
-  position: fixed;
-  bottom: 0;
-  vertical-align: middle;
+.clipboard-input {
+  border: 0;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  flex: 1;
+  background: rgb(241, 238, 238);
 }
 
 .current-user-img{
-  width: 40px;
-  height: 40px;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
 }
 
@@ -56,4 +61,46 @@
   color: #444
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.loader {
+  margin: auto;
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 3px solid rgb(51, 103, 214);
+  width: 15px;
+  height: 15px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
 
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.switch-user-div{
+  cursor: pointer;
+  color: rgb(51, 103, 214);
+}

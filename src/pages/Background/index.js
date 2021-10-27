@@ -18,6 +18,9 @@ chrome.identity.getAuthToken({
 chrome.commands.onCommand.addListener((command) => {
     if (command === 'create-meeting') {
         createGoogleMeet();
+        chrome.runtime.sendMessage({
+            msg: 'meet_btn_press',
+        });
     }
     if (command === 'copy-google-meet-id') {
         chrome.runtime.sendMessage({
